@@ -14,12 +14,18 @@ html {
 
 .page-title{
     text-align: center;
+    text-shadow: 2px 2px 4px grey;
 }
 
 button {
     size: 50px;
     border-radius: 5px;
     stroke-width: 2px;
+}
+
+.checkbox{
+    size: 50px;
+    background-color: green;
 }
 
 #addTaskSubmit {
@@ -60,4 +66,13 @@ button {
 .editing{
     background-color: lightcoral;
     border-color: purple;
+}
+
+#addTaskList{
+    border: 1px solid #000;
+    padding: 6px 12px;
+}
+
+.task-list-heading{
+    text-align: center;
 }

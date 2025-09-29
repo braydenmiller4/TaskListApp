@@ -40,7 +40,7 @@ taskForm.addEventListener("submit", function(event){
         event.target.classList.remove("editing");
         event.target.dataset.entry = null;
         formEditButton.classList.remove('button-edit');
-        formEditButton.value = 'Add';
+        formEditButton.value = 'Submit';
     }else {
         taskList.tasks.push(newTask);
     }
@@ -89,12 +89,14 @@ function renderList() {
             //Create a new checkbox input
             const newCheckboxInput = document.createElement('input');
             newCheckboxInput.type = "checkbox";
+            newCheckboxInput.value = "Complete Task";
+            newCheckboxInput.classList.add("checkbox");
 
             //Make new edit button
             const newTaskItemEdit = document.createElement('button');
             newTaskItemEdit.innerText = "Edit";
             newTaskItemEdit.classList.add("button");
-            newTaskItemEdit.classList.add("button-edit");
+            newTaskItemEdit.id = 'addTaskSubmit';
 
             //Add event listener for edit button
             newTaskItemEdit.addEventListener("click", function(event){
@@ -116,11 +118,7 @@ function renderList() {
 
                 entryFormSubmit.value = 'Update';
                 entryFormSubmit.classList.add('button-edit');
-
-                const entryEditButton = document.getElementById("newTaskItemEdit");
-                entryEditButton.value = 'Cancel';
                 
-
                 saveList();
                 renderList();
 
@@ -136,6 +134,14 @@ function renderList() {
 
             //Add click event listener to delete button
             newDeleteButton.addEventListener("click", function(event){
+                taskList.tasks.splice(index, 1);
+
+                saveList();
+                renderList();
+            })
+
+            //Add click event listener to completed checkbox (essentially the same functionality as the delete button)
+            newCheckboxInput.addEventListener("click", function(event){
                 taskList.tasks.splice(index, 1);
 
                 saveList();
