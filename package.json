@@ -11,5 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braydenmiller4/TaskListApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/braydenmiller4/TaskListApp/issues"
+  },
+  "homepage": "https://github.com/braydenmiller4/TaskListApp#readme"
 }
