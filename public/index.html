@@ -1,0 +1,45 @@
+<!Doctype html>
+
+<html>
+    <head>
+        <title>Task Application</title>
+
+        <!--link css style sheet-->
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div id="task-app">
+            <h1 class="page-title">Task List Application</h1>
+
+            <form id="addTaskForm" action="/">
+                <div class="input-field-wrapper">
+                    <label for="addTaskInput">New Task</label><br>
+                    
+                    <!--Label and input field for task title-->
+                    <label for="addTaskTitle">Title</label>
+                    <input id="addTaskTitle" name="title" type="text"><br>
+
+                    <!--Label and input field for task description-->
+                    <label for="addTaskDescription">Description</label>
+                    <input id="addTaskDescription" name ="description" type="text"><br>
+
+                    <!--Label and input field for task date-->
+                    <label for="addTaskDate">Date</label>
+                    <input id="addTaskDate" name="date" type="date">
+
+                    <!--Button to submit-->
+                    <input id="addTaskSubmit" type="submit"><br>
+            
+                </div>
+            </form>
+
+            <ul id="addTaskList">
+
+            </ul>
+        </div>
+
+        <!--link json file-->
+        <script src="app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+html {
+    background-color: lightskyblue;
+    font-size: 20px;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 24px;
+    width: 40vw;
+    margin: 0 auto;
+}
+
+.input-field-wrapper{
+    border: 2px solid black;
+}
+
+.page-title{
+    text-align: center;
+}
+
+button {
+    size: 50px;
+    border-radius: 5px;
+    stroke-width: 2px;
+}
+
+#addTaskSubmit {
+    background-color: rgb(47, 157, 47);
+    color: rgb(211,244,211);
+}
+
+#addTaskSubmit:hover {
+    background-color: rgb(8, 119, 8);
+    color: rgb(150, 228, 150);
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+#delete {
+    background-color: red;
+    color: white;
+}
+
+#delete:hover {
+    background-color: darkred;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+.taskTitle{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.taskDescription{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.editing{
+    background-color: lightcoral;
+    border-color: purple;
+}
