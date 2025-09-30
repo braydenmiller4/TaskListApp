@@ -17,10 +17,14 @@ html {
     text-shadow: 2px 2px 4px grey;
 }
 
-button {
-    size: 50px;
+button{
     border-radius: 5px;
     stroke-width: 2px;
+}
+
+button:hover, .button:hover{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
 }
 
 .checkbox{
@@ -36,8 +40,6 @@ button {
 #addTaskSubmit:hover {
     background-color: rgb(8, 119, 8);
     color: rgb(150, 228, 150);
-    transition: all 0.2s ease-in-out;
-    transform: scale(1.1);
 }
 
 #delete {
@@ -47,8 +49,6 @@ button {
 
 #delete:hover {
     background-color: darkred;
-    transition: all 0.2s ease-in-out;
-    transform: scale(1.1);
 }
 
 .taskTitle{
@@ -75,4 +75,33 @@ button {
 
 .task-list-heading{
     text-align: center;
+}
+
+#showFormButton{
+    display: block;
+    width: 200px;
+    height: 75px;
+    margin: 0 auto;
+    background-color: lightslategrey;
+    font-size: 16pt;
+    font-family: sans-serif;
+}
+
+#showFormButton:hover{
+    background-color: grey;
+}
+
+.right-justified{
+    float: right;
+}
+
+#closeTaskForm{
+    width: 80px;
+    height: 25px;
+    background-color: rgb(60, 60, 60);
+    color: white;
+}
+
+#closeTaskForm:hover{
+    background-color: black;
 }

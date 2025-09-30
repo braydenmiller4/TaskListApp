@@ -12,9 +12,11 @@
         <div id="task-app">
             <h1 class="page-title">Task List Application</h1>
 
-            <form id="addTaskForm" action="/">
+            <button id="showFormButton" type="button">Add New Task</button>
+
+            <form id="addTaskForm" action="/" style="display: none;">
                 <div class="input-field-wrapper">
-                    <label for="addTaskInput">New Task</label><br>
+                    <label for="addTaskInput" class="addTaskInput">New Task</label><br>
                     
                     <!--Label and input field for task title-->
                     <label for="addTaskTitle">Title</label>
@@ -29,7 +31,12 @@
                     <input id="addTaskDate" name="date" type="date">
 
                     <!--Button to submit-->
-                    <input id="addTaskSubmit" type="submit"><br>
+                    <input id="addTaskSubmit" type="submit" class="button">
+
+                    <!--Button to clear form-->
+                    <input id="clearTaskForm" type="reset" value="Clear" class="button">
+                    
+                    <input id="closeTaskForm" type="button" value="Close Form" class="right-justified button">
             
                 </div>
             </form>

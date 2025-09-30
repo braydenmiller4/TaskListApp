@@ -12,6 +12,25 @@ if(localEntries){
     renderList();
 }
 
+//Get button from HTML that will show the task entry form
+const showFormButton = document.getElementById("showFormButton");
+
+//Add event listener to make form appear when button is pressed
+showFormButton.addEventListener("click", function(event){
+    const addTaskForm = document.getElementById("addTaskForm");
+    addTaskForm.style.display = "block";
+    showFormButton.style.display = "none";
+})
+
+//Add event listener for button to close form
+const closeFormButton = document.getElementById("closeTaskForm");
+
+closeFormButton.addEventListener("click", function(event){
+    const addTaskForm = document.getElementById("addTaskForm");
+    addTaskForm.style.display = "none";
+    showFormButton.style.display = "block";
+})
+
 
 //Get the task form element from HTML file
 const taskForm = document.getElementById("addTaskForm");
@@ -31,6 +50,8 @@ taskForm.addEventListener("submit", function(event){
         date: taskDate,
     }
 
+    showFormButton.style.display = "block";
+
     if(event.target.classList.contains("editing")){
         const entryIndex = event.target.dataset.entry;
         taskList.tasks[entryIndex] = newTask;
@@ -48,6 +69,7 @@ taskForm.addEventListener("submit", function(event){
     event.target.reset();
     saveList();
     renderList();
+    document.getElementById("addTaskForm").style.display = "none";
 })
 
 
@@ -80,11 +102,9 @@ function renderList() {
 
             //Create a new delete button
             const newDeleteButton = document.createElement('button');
+            newDeleteButton.classList.add('button');
             newDeleteButton.textContent = "Delete";
             newDeleteButton.id = "delete";
-
-            //Create a cancel button
-            const newCancelButton = document.createElement('button');
 
             //Create a new checkbox input
             const newCheckboxInput = document.createElement('input');
@@ -92,7 +112,7 @@ function renderList() {
             newCheckboxInput.value = "Complete Task";
             newCheckboxInput.classList.add("checkbox");
 
-            //Make new edit button
+            //Make new edit button     
             const newTaskItemEdit = document.createElement('button');
             newTaskItemEdit.innerText = "Edit";
             newTaskItemEdit.classList.add("button");
@@ -100,7 +120,10 @@ function renderList() {
 
             //Add event listener for edit button
             newTaskItemEdit.addEventListener("click", function(event){
+                showFormButton.style.display = "none";
+                newTaskItemEdit.textContent = "Cancel";
                 const entryForm = document.getElementById("addTaskForm");
+                entryForm.style.display = "block";
                 const entryTitle = document.getElementById("addTaskTitle");
                 const entryDescription = document.getElementById("addTaskDescription");
                 const entryDate = document.getElementById("addTaskDate");
