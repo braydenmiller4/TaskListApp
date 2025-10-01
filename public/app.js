@@ -67,6 +67,7 @@ taskForm.addEventListener("submit", function(event){
     }
 
     event.target.reset();
+    sortList();
     saveList();
     renderList();
     document.getElementById("addTaskForm").style.display = "none";
@@ -84,6 +85,16 @@ function loadList() {
     localEntries.forEach((entry)=> {
         taskList.tasks.push(entry);
     });
+}
+
+//Function to sort list
+function sortList() {
+    taskList.tasks.sort(function(a,b) {
+        const dateA = Date.parse(a.date);
+        const dateB = Date.parse(b.date);
+
+        return dateA-dateB;
+    })
 }
 
 function renderList() {
